@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <TopNav />
       <BaseLayout>
-        <h1>test</h1>
+        <h1 className='text-2xl text-red-500'>test</h1>
       </BaseLayout>
     </>
   )

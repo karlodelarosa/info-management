@@ -1,5 +1,4 @@
 export default function BaseLayout({ children }: any) {
-  console.info(children)
   return (
     <>
       <aside
@@ -158,7 +157,7 @@ export default function BaseLayout({ children }: any) {
 
       <div className="p-4 sm:ml-64 pt-[70px]">
         <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-          hello there
+          {children}
         </div>
       </div>
     </>
