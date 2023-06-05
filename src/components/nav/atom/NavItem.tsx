@@ -1,5 +1,5 @@
-import type { NavItems } from "../../../core/domain/types/NavItems.type"
-import { useNavigate } from "react-router-dom"
+import type { NavItems } from '../../../core/domain/types/NavItems.type'
+import { useNavigate } from 'react-router-dom'
 
 export default function NavItem(props: NavItems) {
   const items = props.items
@@ -9,15 +9,13 @@ export default function NavItem(props: NavItems) {
     navigate(url)
   }
 
-  return(
+  return (
     <>
-    {
-      items.map((data: any, key) => 
+      {items.map((data: any, key) => (
         <a onClick={() => redirect(data.custom_route)} key={key}>
           {data.title}
         </a>
-      ) 
-    }
+      ))}
     </>
   )
 }

@@ -1,13 +1,13 @@
-import BaseLayout from "@/components/layout/BaseLayout"
-import TopNav from "../components/nav/TopNav"
+import BaseLayout from '@/components/layout/BaseLayout'
+import TopNav from '../components/nav/TopNav'
 
 export default function Home() {
   return (
     <>
-      <TopNav/>
+      <TopNav />
       <BaseLayout>
         <h1>test</h1>
       </BaseLayout>
     </>
-  );
+  )
 }

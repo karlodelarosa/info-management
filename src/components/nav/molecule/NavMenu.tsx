@@ -1,12 +1,10 @@
-import NavItem from "../atom/NavItem"
-import { NAV_MENU } from "../../../js/BaseConstant"
+import NavItem from '../atom/NavItem'
+import { NAV_MENU } from '../../../js/BaseConstant'
 
 export default function NavMenu() {
-  return(
+  return (
     <nav className="nav-menu">
-      <NavItem
-        items={NAV_MENU}
-      />
+      <NavItem items={NAV_MENU} />
     </nav>
   )
 }

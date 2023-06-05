@@ -1,5 +1,5 @@
 export default function BaseLayout({ children }: any) {
-  console.info(children);
+  console.info(children)
   return (
     <>
       <aside
@@ -162,5 +162,5 @@ export default function BaseLayout({ children }: any) {
         </div>
       </div>
     </>
-  );
+  )
 }
