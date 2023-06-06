@@ -1,5 +1,13 @@
 export const NAV_MENU = [
   {
+    title: 'Projects',
+    custom_route: 'sky7'
+  },
+  {
+    title: 'Ministry',
+    custom_route: 'sky7'
+  },
+  {
     title: 'User Management',
     custom_route: 'sky7'
   },
@@ -15,11 +23,15 @@ export const SIDEBAR_MENU = [
     custom_route: '/'
   },
   {
+    title: 'Attendance',
+    custom_route: '/attendance'
+  },
+  {
     title: 'Members',
     custom_route: '/members'
   },
   {
-    title: 'Attendance',
-    custom_route: '/attendance'
+    title: 'Manage Profile',
+    custom_route: '/members'
   }
 ]

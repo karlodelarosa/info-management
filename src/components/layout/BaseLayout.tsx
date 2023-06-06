@@ -5,8 +5,8 @@ import MainContent from '@/components/content/MainContent'
 export default function BaseLayout({ children }: any) {
   return (
     <>
-      <TopNav/>
-      <Sidebar/>
+      <TopNav />
+      <Sidebar />
       <MainContent>{children}</MainContent>
     </>
   )
