@@ -27,8 +27,8 @@ export const SIDEBAR_MENU = [
     custom_route: '/attendance'
   },
   {
-    title: 'Members',
-    custom_route: '/members'
+    title: 'Profiles',
+    custom_route: '/profiles'
   },
   {
     title: 'Manage Profile',
