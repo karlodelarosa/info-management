@@ -11,8 +11,8 @@ export default function SidebarItem(props: NavItems) {
 
   return (
     <>
-      {items.map((data: any) => (
-        <li>
+      {items.map((data: any, key) => (
+        <li key={key}>
           <a
             onClick={() => redirect(data.custom_route)}
             className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 cursor-pointer"

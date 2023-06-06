@@ -1,5 +1,11 @@
+import BaseLayout from '@/components/layout/BaseLayout'
+
 export default function AddProfile() {
-  return(
-    <h1>Add profile</h1>
+  return (
+    <>
+      <BaseLayout>
+        <h1 className="text-2xl text-red-500">AddProfile</h1>
+      </BaseLayout>
+    </>
   )
 }

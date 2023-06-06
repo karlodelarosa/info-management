@@ -5,6 +5,7 @@ import Members from '@/views/Members'
 import Settings from '../views/Settings'
 import SignIn from '../views/SignIn'
 import Profiles from '@/views/Profiles'
+import AddProfile from '@/views/AddProfile'
 
 export default function AppRoutes() {
   return (
@@ -12,6 +13,7 @@ export default function AppRoutes() {
       <Route path="/" element={<Home />}></Route>
       <Route path="/attendance" element={<Attendance />}></Route>
       <Route path="/members" element={<Members />}></Route>
+      <Route path="/profile/add" element={<AddProfile />}></Route>
       <Route path="/profiles" element={<Profiles />}></Route>
       <Route path="/sign-in" element={<SignIn />}></Route>
       <Route path="/settings" element={<Settings />}></Route>

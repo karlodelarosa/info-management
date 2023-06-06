@@ -2,18 +2,22 @@ import BaseLayout from '@/components/layout/BaseLayout'
 import SuccessButton from '@/components/button/SuccessButton'
 
 export default function Members() {
-  const mock = [1,1,1,1,11,1,1,1,1,1,1,1]
+  const mock = [1, 1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1]
   return (
     <>
       <BaseLayout>
-        <div className='flex flex-row items-center justify-between'>
-          <div className='flex flex-row gap-x-[10px]'>
-          <select className='bg-white border border-gray-300 text-gray-900 text-sm rounded-lg px-3 py-2'>
-            <option value="">All</option>
-            <option value="">Members</option>
-            <option value="">Workers</option>
-          </select>
-          <input type="text" placeholder='Search Name' className="className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-3 py-2"/>
+        <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-row gap-x-[10px]">
+            <select className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg px-3 py-2">
+              <option value="">All</option>
+              <option value="">Members</option>
+              <option value="">Workers</option>
+            </select>
+            <input
+              type="text"
+              placeholder="Search Name"
+              className="className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-3 py-2"
+            />
           </div>
           <SuccessButton text="Add Profile" />
         </div>
@@ -24,7 +28,7 @@ export default function Members() {
               <thead className="text-xs text-gray-700 uppercase bg-gray-400">
                 <tr>
                   <th scope="col" className="px-6 py-3">
-                  <span className="sr-only">Checkbox</span>
+                    <span className="sr-only">Checkbox</span>
                   </th>
                   <th scope="col" className="px-6 py-3">
                     Name
@@ -41,27 +45,26 @@ export default function Members() {
                 </tr>
               </thead>
               <tbody>
-                {mock.map(() => 
+                {mock.map(() => (
                   <tr className="bg-white border-b hover:bg-gray-50 ">
-                  <td className="px-6 py-4">
-                    <input type="checkbox" name="" id="" />
-                  </td>
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
-                  >
-                    Karlo Dela Rosa
-                  </th>
-                  <td className="px-6 py-4">Alegra Heights, San Vicente, Santa Maria, Bulacan</td>
-                  <td className="px-6 py-4">+63943443434</td>
-                  <td className="px-6 py-4 text-right">
-                    <a href="#" className="font-medium text-blue-600 hover:underline">
-                      Edit
-                    </a>
-                  </td>
-                </tr>
-                )}
-                
+                    <td className="px-6 py-4">
+                      <input type="checkbox" name="" id="" />
+                    </td>
+                    <th
+                      scope="row"
+                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
+                    >
+                      Karlo Dela Rosa
+                    </th>
+                    <td className="px-6 py-4">Alegra Heights, San Vicente, Santa Maria, Bulacan</td>
+                    <td className="px-6 py-4">+63943443434</td>
+                    <td className="px-6 py-4 text-right">
+                      <a href="#" className="font-medium text-blue-600 hover:underline">
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
