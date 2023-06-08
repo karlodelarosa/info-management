@@ -1,3 +1,13 @@
-export default function MainContent({ children }: any) {
-  return <main className="p-4 sm:ml-64 pt-[70px] bg-gray-50 min-h-screen">{children}</main>
+import Breadcrumb from "../nav/molecule/Breadcrumb"
+import { ComponentSlot } from "@/core/domain/types/ComponentSlot.type"
+
+export default function MainContent({ children }: ComponentSlot) {
+  return (
+    <>
+      <main className="sm:ml-64 pt-[85px] px-[25px] bg-gray-100 min-h-screen">
+        <Breadcrumb />
+        {children}
+      </main>
+    </>
+  )
 }
