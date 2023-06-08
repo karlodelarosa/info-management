@@ -33,6 +33,5 @@ export const SIDEBAR_MENU = [
   {
     title: 'Manage Profile',
     custom_route: '/members'
-  },
-
+  }
 ]

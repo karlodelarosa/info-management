@@ -7,14 +7,13 @@ export default function AddProfile() {
   return (
     <>
       <BaseLayout>
-        <div className="py-2">
+        <div className="pb-2">
           <h1 className="text-2xl font-bold text-gray-800">Add New Profile</h1>
         </div>
 
         <div className="grid grid-cols-12 gap-x-[20px]">
           <div className="col-span-7">
             <CardContent title="PERSONAL INFORMATION">
-              
               <form action="" className="mx-[10px] my-[20px]">
                 <div className="grid grid-cols-12 gap-x-[15px] mb-[15px]">
                   <div className="col-span-4">
@@ -109,17 +108,15 @@ export default function AddProfile() {
                   </div>
                 </div>
 
-                <div className='flex flex-row gap-x-[5px] items-center justify-end '>
-                  <DefaultButton handleClick={() => {}} text='Cancel'/>
-                  <SuccessButton handleClick={() => {}} text='Save profile'/>
+                <div className="flex flex-row gap-x-[5px] items-center justify-end ">
+                  <DefaultButton handleClick={() => {}} text="Cancel" />
+                  <SuccessButton handleClick={() => {}} text="Save profile" />
                 </div>
               </form>
             </CardContent>
           </div>
 
-          <div className='col-span-5'>
-          
-          </div>
+          <div className="col-span-5"></div>
         </div>
       </BaseLayout>
     </>

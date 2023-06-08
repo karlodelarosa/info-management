@@ -1,5 +1,5 @@
-import Breadcrumb from "../nav/molecule/Breadcrumb"
-import { ComponentSlot } from "@/core/domain/types/ComponentSlot.type"
+import Breadcrumb from '../nav/molecule/Breadcrumb'
+import { ComponentSlot } from '@/core/domain/types/ComponentSlot.type'
 
 export default function MainContent({ children }: ComponentSlot) {
   return (

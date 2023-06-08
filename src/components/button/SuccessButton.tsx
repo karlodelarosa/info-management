@@ -1,4 +1,4 @@
-import type { ButtonType } from "@/core/domain/types/Button.types"
+import type { ButtonType } from '@/core/domain/types/Button.types'
 
 export default function SuccessButton(props: ButtonType) {
   const { text, handleClick } = props
