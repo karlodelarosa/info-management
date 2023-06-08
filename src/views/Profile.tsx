@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import BaseLayout from '@/components/layout/BaseLayout'
 import SuccessButton from '@/components/button/SuccessButton'
 
-export default function Profiles() {
+export default function Profile() {
   const mock = [1, 1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1]
   const navigate = useNavigate()
 
@@ -13,6 +13,10 @@ export default function Profiles() {
   return (
     <>
       <BaseLayout>
+        <div className="pb-2">
+          <h1 className="text-2xl font-bold text-gray-800">All Profiles</h1>
+        </div>
+
         <div className="flex flex-row items-center justify-between">
           <div className="flex flex-row gap-x-[10px]">
             <select className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg px-3 py-2">
