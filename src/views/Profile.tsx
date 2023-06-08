@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import BaseLayout from '@/components/layout/BaseLayout'
 import SuccessButton from '@/components/button/SuccessButton'
 
@@ -70,9 +70,12 @@ export default function Profile() {
                     <td className="px-6 py-4">Alegra Heights, San Vicente, Santa Maria, Bulacan</td>
                     <td className="px-6 py-4">+63943443434</td>
                     <td className="px-6 py-4 text-right">
-                      <a href="#" className="font-medium text-blue-600 hover:underline">
+                      <Link
+                        to="/profile/edit"
+                        className="font-medium text-blue-600 hover:underline"
+                      >
                         Edit
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                 ))}

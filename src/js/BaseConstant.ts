@@ -1,7 +1,7 @@
 export const NAV_MENU = [
   {
     title: 'Family Profile',
-    custom_route: '/members'
+    custom_route: '/family'
   },
   {
     title: 'Ministry',
@@ -31,7 +31,7 @@ export const SIDEBAR_MENU = [
     custom_route: '/profile'
   },
   {
-    title: 'Manage Profile',
-    custom_route: '/members'
+    title: 'Schedule',
+    custom_route: '/schedule'
   }
 ]

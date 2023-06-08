@@ -24,7 +24,8 @@ export default function Attendance() {
                       key == 4 ? 'bg-gray-200' : ''
                     }`}
                   >
-                    May 29, 2023
+                    <h4 className="text-lg font-bold">Funday {key}</h4>
+                    <p className="text-sm text-gray-500">May 29, 2023</p>
                   </li>
                 ))}
               </ul>
@@ -33,7 +34,9 @@ export default function Attendance() {
           <div className="col-span-9">
             <div className="flex flex-row items-center justify-between mb-[15px]">
               <div>
-                <h2 className="text-2xl font-bold">May 29, 2023</h2>
+                <h2 className="text-2xl font-bold">
+                  Funday <span className="text-sm text-gray-500">May 29, 2023</span>
+                </h2>
                 <p className="text-gray-500">Total count: 45</p>
               </div>
               <SuccessButton

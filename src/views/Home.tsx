@@ -4,7 +4,12 @@ export default function Home() {
   return (
     <>
       <BaseLayout>
-        <h1 className="text-2xl text-red-500">Home</h1>
+        <div className="flex items-center">
+          <h1 className="text-3xl  text-gray-800">
+            Welcome to <br />
+            <span className="text-7xl font-bold">RECORDS UI</span>
+          </h1>
+        </div>
       </BaseLayout>
     </>
   )
