@@ -5,11 +5,11 @@ export const NAV_MENU = [
   },
   {
     title: 'Ministry',
-    custom_route: 'sky7'
+    custom_route: '/ministry'
   },
   {
     title: 'User Management',
-    custom_route: 'sky7'
+    custom_route: '/user-management'
   },
   {
     title: 'Logout',

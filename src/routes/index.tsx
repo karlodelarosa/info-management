@@ -10,6 +10,8 @@ import AddAttendance from '@/views/AddAttendance'
 import Schedule from '@/views/Schedule'
 import Family from '@/views/Family'
 import EditProfile from '@/views/EditProfile'
+import Ministry from '@/views/Ministry'
+import UserManagement from '@/views/UserManagement'
 
 export default function AppRoutes() {
   return (
@@ -23,6 +25,8 @@ export default function AppRoutes() {
       <Route path="/profile" element={<Profile />}></Route>
       <Route path="/schedule" element={<Schedule />}></Route>
       <Route path="/family" element={<Family />}></Route>
+      <Route path="/ministry" element={<Ministry />}></Route>
+      <Route path="/user-management" element={<UserManagement />}></Route>
       <Route path="/sign-in" element={<SignIn />}></Route>
       <Route path="/settings" element={<Settings />}></Route>
     </Routes>
