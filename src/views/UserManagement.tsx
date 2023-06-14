@@ -17,8 +17,6 @@ interface User {
 }
 
 export default function UserManagement() {
-  const mock = [1, 1, 1, 1]
-
   const [fetchUsers, setUsers ] = useState<User[]>([])
 
 

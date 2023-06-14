@@ -56,8 +56,8 @@ export default function Profile() {
                 </tr>
               </thead>
               <tbody>
-                {mock.map((data: any, key) => (
-                  <tr className="bg-white border-b hover:bg-gray-50 " key={key}>
+                {mock.map((data: any) => (
+                  <tr className="bg-white border-b hover:bg-gray-50 " key={data}>
                     <td className="px-6 py-4">
                       <input type="checkbox" name="" id="" />
                     </td>

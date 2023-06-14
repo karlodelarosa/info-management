@@ -1,8 +1,6 @@
 import BaseLayout from '@/components/layout/BaseLayout'
 import CardContent from '@/components/cards/CardContent'
 import PrimaryButton from '@/components/button/PrimaryButton'
-import DangerButton from '@/components/button/DangerButton'
-import DefaultButton from '@/components/button/DefaultButton'
 import SuccessButton from '@/components/button/SuccessButton'
 
 export default function Family() {
@@ -78,8 +76,8 @@ export default function Family() {
                   </tr>
                 </thead>
                 <tbody>
-                  {mock.map((data: any, key) => (
-                    <tr className="bg-white border-b hover:bg-gray-50 " key={key}>
+                  {mock.map((data: any) => (
+                    <tr className="bg-white border-b hover:bg-gray-50 " key={data}>
                       <th
                         scope="row"
                         className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
