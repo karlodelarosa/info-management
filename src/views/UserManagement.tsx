@@ -19,7 +19,6 @@ interface User {
 export default function UserManagement() {
   const [fetchUsers, setUsers ] = useState<User[]>([])
 
-
   async function getUsers() {
     const { data }: PostgrestResponse<User> = await db.from("user").select(`first_name, last_name, user_role (name)`)
     setUsers(data || [])
