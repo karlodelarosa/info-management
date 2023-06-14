@@ -1,11 +1,39 @@
 import BaseLayout from '@/components/layout/BaseLayout'
 import CardContent from '@/components/cards/CardContent'
-import DangerButton from '@/components/button/DangerButton'
 import DefaultButton from '@/components/button/DefaultButton'
+import PrimaryButton from '@/components/button/PrimaryButton'
 import SuccessButton from '@/components/button/SuccessButton'
+
+import { useEffect, useState } from "react"
+import { db } from '@/core/infrastructure/db/DbClient'
+import { PostgrestResponse } from '@supabase/supabase-js'
+
+interface User {
+  first_name: string,
+  last_name: string,
+  user_role: {
+    name: string
+  }
+}
 
 export default function UserManagement() {
   const mock = [1, 1, 1, 1]
+
+  const [fetchUsers, setUsers ] = useState<User[]>([])
+
+
+  async function getUsers() {
+    const { data }: PostgrestResponse<User> = await db.from("user").select(`first_name, last_name, user_role (name)`)
+    setUsers(data || [])
+    // console.info(data)
+    // return data
+  }
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
+  
 
   return (
     <>
@@ -124,6 +152,7 @@ export default function UserManagement() {
           </div>
 
           <div className="col-span-7">
+            
             {/* <CardContent> */}
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg mb-[30px]">
               <table className="w-full text-sm text-left text-gray-500 ">
@@ -133,31 +162,30 @@ export default function UserManagement() {
                       Name
                     </th>
                     <th scope="col" className="px-6 py-3">
-                      Address
+                      Role
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    {/* <th scope="col" className="px-6 py-3">
                       Contact Number
-                    </th>
+                    </th> */}
                     <th scope="col" className="px-6 py-3">
                       <span className="sr-only">Edit</span>
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {mock.map((data: any, key) => (
+                  {fetchUsers.map((data: User, key) => (
                     <tr className="bg-white border-b hover:bg-gray-50 " key={key}>
                       <th
                         scope="row"
                         className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
                       >
-                        Karlo Dela Rosa
+                        {data.first_name} {data.last_name}
                       </th>
                       <td className="px-6 py-4">
-                        Alegra Heights, San Vicente, Santa Maria, Bulacan
+                        {data.user_role.name}
                       </td>
-                      <td className="px-6 py-4">+63943443434</td>
                       <td className="px-6 py-4 text-right">
-                        <DangerButton text="Deactivate" />
+                        <PrimaryButton handleClick={() => {}} text="Manage Settings" />
                       </td>
                     </tr>
                   ))}
