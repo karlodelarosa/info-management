@@ -67,8 +67,8 @@ export default function Attendance() {
                   </tr>
                 </thead>
                 <tbody>
-                  {arr.map((data: any, key) => (
-                    <tr className="bg-white border-b hover:bg-gray-50 " key={key}>
+                  {arr.map((data: any) => (
+                    <tr className="bg-white border-b hover:bg-gray-50 " key={data}>
                       <td className="px-6 py-4">
                         <input type="checkbox" name="" id="" />
                       </td>
