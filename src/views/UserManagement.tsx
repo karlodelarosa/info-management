@@ -4,33 +4,33 @@ import DefaultButton from '@/components/button/DefaultButton'
 import PrimaryButton from '@/components/button/PrimaryButton'
 import SuccessButton from '@/components/button/SuccessButton'
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 import { db } from '@/core/infrastructure/db/DbClient'
 import { PostgrestResponse } from '@supabase/supabase-js'
 
 interface User {
-  first_name: string,
-  last_name: string,
+  first_name: string
+  last_name: string
   user_role: {
     name: string
   }
 }
 
 export default function UserManagement() {
-  const [fetchUsers, setUsers ] = useState<User[]>([])
+  const [fetchUsers, setUsers] = useState<User[]>([])
 
   async function getUsers() {
-    const { data }: PostgrestResponse<User> = await db.from("user").select(`first_name, last_name, user_role (name)`)
+    const { data }: PostgrestResponse<User> = await db
+      .from('user')
+      .select(`first_name, last_name, user_role (name)`)
     setUsers(data || [])
     // console.info(data)
     // return data
   }
 
   useEffect(() => {
-    getUsers();
-  }, []);
-
-  
+    getUsers()
+  }, [])
 
   return (
     <>
@@ -149,7 +149,6 @@ export default function UserManagement() {
           </div>
 
           <div className="col-span-7">
-            
             {/* <CardContent> */}
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg mb-[30px]">
               <table className="w-full text-sm text-left text-gray-500 ">
@@ -178,9 +177,7 @@ export default function UserManagement() {
                       >
                         {data.first_name} {data.last_name}
                       </th>
-                      <td className="px-6 py-4">
-                        {data.user_role.name}
-                      </td>
+                      <td className="px-6 py-4">{data.user_role.name}</td>
                       <td className="px-6 py-4 text-right">
                         <PrimaryButton handleClick={() => {}} text="Manage Settings" />
                       </td>
