@@ -6,6 +6,7 @@ import { IUserRepository } from '@/core/domain/repositories/IUserRepository'
 export default class UserRepository extends DbConnection implements IUserRepository {
   findById(id: string): Promise<User | null> {
     const user = ''
+    console.info(id)
     return Promise.resolve(user || null)
   }
 
@@ -27,12 +28,13 @@ export default class UserRepository extends DbConnection implements IUserReposit
   }
 
   save(user: User): Promise<void> {
+    console.info(user)
     // this.users.push(user)
     return Promise.resolve()
   }
 
   delete(id: string): Promise<void> {
-    // this.users = this.users.filter((user) => user.id !== id)
+    console.info(id)
     return Promise.resolve()
   }
 }
