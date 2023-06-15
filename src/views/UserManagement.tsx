@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { FormData } from '@/core/domain/types/FormData.types'
 import { User } from '@/core/domain/models/User.types'
 import UserService from '@/core/application/services/UserService'
 /*
@@ -7,19 +8,35 @@ import UserService from '@/core/application/services/UserService'
 import BaseLayout from '@/components/layout/BaseLayout'
 import CardContent from '@/components/cards/CardContent'
 import DefaultButton from '@/components/button/DefaultButton'
+import FormGroup from '@/components/form/FormGroup'
+import PageHeading from '@/components/text/PageHeading'
 import PrimaryButton from '@/components/button/PrimaryButton'
 import SuccessButton from '@/components/button/SuccessButton'
-import PageHeading from '@/components/text/PageHeading'
 
 export default function UserManagement() {
-  const [fetchUsers, setUsers] = useState<User[]>([])
+  const [users, setUsers] = useState<User[]>([])
+  const [formData, setFormData] = useState<FormData>({
+    first_name: '',
+    last_name: '',
+    display_name: ''
+  })
+
+  const handleInputChange = (name: keyof FormData, value: string) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value
+    }))
+  }
 
   const userService = new UserService()
 
   useEffect(() => {
-    userService.getAllUser().then((user) => {
-      setUsers(user || [])
-    })
+    const fetchUsers = async () => {
+      const fetchedUsers = await userService.getAllUser()
+      setUsers(fetchedUsers || [])
+    }
+
+    fetchUsers()
   }, [])
 
   return (
@@ -33,32 +50,26 @@ export default function UserManagement() {
               <form action="" className="mx-[10px] my-[20px]">
                 <div className="grid grid-cols-12 gap-x-[15px] mb-[15px]">
                   <div className="col-span-6 mb-[15px]">
-                    <label
-                      htmlFor="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-900 "
-                    >
-                      First name
-                    </label>
-                    <input
-                      type="text"
+                    <FormGroup
                       id="first_name"
-                      className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                      required
+                      label="First Name"
+                      inputType="text"
+                      name="first_name"
+                      value={formData.first_name}
+                      required={true}
+                      onValueChange={handleInputChange}
                     />
                   </div>
 
                   <div className="col-span-6 mb-[15px]">
-                    <label
-                      htmlFor="first_name"
-                      className="block mb-2 text-sm font-medium text-gray-900 "
-                    >
-                      Last name
-                    </label>
-                    <input
-                      type="text"
-                      id="first_name"
-                      className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                      required
+                    <FormGroup
+                      id="last_name"
+                      label="First Name"
+                      inputType="text"
+                      name="last_name"
+                      value={formData.last_name}
+                      required={true}
+                      onValueChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -157,7 +168,7 @@ export default function UserManagement() {
                   </tr>
                 </thead>
                 <tbody>
-                  {fetchUsers.map((data: User, key) => (
+                  {users.map((data: User, key) => (
                     <tr className="bg-white border-b hover:bg-gray-50 " key={key}>
                       <th
                         scope="row"
