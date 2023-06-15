@@ -1,43 +1,31 @@
+import { useEffect, useState } from 'react'
+import { User } from '@/core/domain/models/User.types'
+import UserService from '@/core/application/services/UserService'
+/*
+ * Components
+ */
 import BaseLayout from '@/components/layout/BaseLayout'
 import CardContent from '@/components/cards/CardContent'
 import DefaultButton from '@/components/button/DefaultButton'
 import PrimaryButton from '@/components/button/PrimaryButton'
 import SuccessButton from '@/components/button/SuccessButton'
-
-import { useEffect, useState } from 'react'
-import { db } from '@/core/infrastructure/db/DbClient'
-import { PostgrestResponse } from '@supabase/supabase-js'
-
-interface User {
-  first_name: string
-  last_name: string
-  user_role: {
-    name: string
-  }
-}
+import PageHeading from '@/components/text/PageHeading'
 
 export default function UserManagement() {
   const [fetchUsers, setUsers] = useState<User[]>([])
 
-  async function getUsers() {
-    const { data }: PostgrestResponse<User> = await db
-      .from('user')
-      .select(`first_name, last_name, user_role (name)`)
-    setUsers(data || [])
-    // console.info(data)
-    // return data
-  }
+  const userService = new UserService()
 
   useEffect(() => {
-    getUsers()
+    userService.getAllUser().then((user) => {
+      setUsers(user || [])
+    })
   }, [])
 
   return (
     <>
       <BaseLayout>
-        <div className="pb-2">
-          <h1 className="text-2xl font-bold text-gray-800">Manage User Accounts</h1>
-        </div>
+        <PageHeading text="Manage User Accounts" />
 
         <div className="grid grid-cols-12 gap-x-[20px]">
           <div className="col-span-5">
