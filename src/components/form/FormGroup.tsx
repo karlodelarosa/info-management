@@ -1,14 +1,14 @@
-import { FormData } from '@/core/domain/types/FormData.types'
+import { CreateUserForm } from '@/core/domain/types/CreateUserForm.types'
 
 interface FormGroup {
   id: string
   label: string
   inputType: string
-  name: keyof FormData
+  name: keyof CreateUserForm
   value: string
   required?: boolean
   disabled?: boolean
-  onValueChange: (name: keyof FormData, value: string) => void
+  onValueChange: (name: keyof CreateUserForm, value: string) => void
 }
 
 export default function FormGroup({
@@ -29,7 +29,7 @@ export default function FormGroup({
   return (
     <>
       <label htmlFor={id} className="form-label">
-        {label}
+        {label} {required ? '*' : ''}
       </label>
       <input
         type={inputType}
