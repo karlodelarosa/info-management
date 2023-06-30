@@ -32,12 +32,9 @@ export default class UserRepository extends DbConnection implements IUserReposit
 
   async save(user: CreateUserForm): Promise<any> {
     try {
-      const userForm = {...user, user_type: UserEntity.ROLE_MEMBER}
+      const userForm = { ...user, user_type: UserEntity.ROLE_MEMBER }
 
-      const { data, error } = await this.db()
-        .from('user')
-        .insert(userForm)
-        .select()
+      const { data, error } = await this.db().from('user').insert(userForm).select()
 
       if (error) {
         throw new Error(error.message)

@@ -1,4 +1,4 @@
-import { CreateUserForm } from "@/core/domain/types/CreateUserForm.types"
+import { CreateUserForm } from '@/core/domain/types/CreateUserForm.types'
 
 export default class UserDTO {
   private readonly form: Readonly<CreateUserForm>

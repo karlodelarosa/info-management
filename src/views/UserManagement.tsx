@@ -38,7 +38,7 @@ export default function UserManagement() {
     event.preventDefault()
 
     const register = await userService.registerUser(formData)
-    
+
     if (register) {
       setSuccessResponse(register)
     }

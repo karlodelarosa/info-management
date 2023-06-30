@@ -1,11 +1,10 @@
-import { Response } from "@/core/domain/types/Response.type"
+import { Response } from '@/core/domain/types/Response.type'
 
 interface SuccessResponse {
   response: Response
 }
 
 export default function SuccessFloat({ response }: SuccessResponse) {
-  
   let showAlert = 'opacity-100'
   setTimeout(() => {
     showAlert = 'opacity-0'
@@ -32,9 +31,7 @@ export default function SuccessFloat({ response }: SuccessResponse) {
         ></path>
       </svg>
       <span className="sr-only">Info</span>
-      <div>
-        test
-      </div>
+      <div>test</div>
     </div>
   )
 }
