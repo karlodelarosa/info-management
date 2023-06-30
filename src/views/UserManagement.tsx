@@ -1,4 +1,6 @@
 import { useEffect, useState, FormEvent } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { CreateUserForm } from '@/core/domain/types/CreateUserForm.types'
 import { User } from '@/core/domain/models/User.types'
 import UserService from '@/core/application/services/UserService'
@@ -13,7 +15,6 @@ import FormGroup from '@/components/form/FormGroup'
 import PageHeading from '@/components/text/PageHeading'
 import PrimaryButton from '@/components/button/PrimaryButton'
 import SuccessButton from '@/components/button/SuccessButton'
-import SuccessFloat from '@/components/floater/SuccessFloat'
 
 export default function UserManagement() {
   const [users, setUsers] = useState<User[]>([])
@@ -40,7 +41,11 @@ export default function UserManagement() {
     const register = await userService.registerUser(formData)
 
     if (register) {
-      setSuccessResponse(register)
+      const notify = () => toast.success(register.message, {
+        position: 'bottom-right',
+        theme: 'dark',
+      });
+      notify()
     }
   }
 
@@ -57,9 +62,7 @@ export default function UserManagement() {
     <>
       <BaseLayout>
         <PageHeading text="Manage User Accounts" />
-
-        <SuccessFloat response={successResponse} />
-
+        <ToastContainer />
         <div className="grid grid-cols-12 gap-x-[20px]">
           <div className="col-span-5">
             <CardContent title="ACCOUNT INFORMATION">
