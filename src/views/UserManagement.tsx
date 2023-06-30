@@ -13,6 +13,7 @@ import FormGroup from '@/components/form/FormGroup'
 import PageHeading from '@/components/text/PageHeading'
 import PrimaryButton from '@/components/button/PrimaryButton'
 import SuccessButton from '@/components/button/SuccessButton'
+import SuccessFloat from '@/components/floater/SuccessFloat'
 
 export default function UserManagement() {
   const [users, setUsers] = useState<User[]>([])
@@ -22,6 +23,7 @@ export default function UserManagement() {
     display_name: '',
     email: ''
   })
+  const [successResponse, setSuccessResponse] = useState()
 
   const userService = new UserService()
 
@@ -32,10 +34,14 @@ export default function UserManagement() {
     }))
   }
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
 
-    userService.registerUser(formData)
+    const register = await userService.registerUser(formData)
+    
+    if (register) {
+      setSuccessResponse(register)
+    }
   }
 
   useEffect(() => {
@@ -51,6 +57,8 @@ export default function UserManagement() {
     <>
       <BaseLayout>
         <PageHeading text="Manage User Accounts" />
+
+        <SuccessFloat response={successResponse} />
 
         <div className="grid grid-cols-12 gap-x-[20px]">
           <div className="col-span-5">
