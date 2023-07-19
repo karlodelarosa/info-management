@@ -1,10 +1,10 @@
 export const NAV_MENU = [
   {
-    title: 'Family Profile',
+    title: 'Groups',
     custom_route: '/family'
   },
   {
-    title: 'Ministry',
+    title: 'Department',
     custom_route: '/ministry'
   },
   {

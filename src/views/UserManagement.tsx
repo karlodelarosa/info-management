@@ -24,7 +24,6 @@ export default function UserManagement() {
     display_name: '',
     email: ''
   })
-  const [successResponse, setSuccessResponse] = useState()
 
   const userService = new UserService()
 
@@ -41,11 +40,18 @@ export default function UserManagement() {
     const register = await userService.registerUser(formData)
 
     if (register) {
-      const notify = () => toast.success(register.message, {
-        position: 'bottom-right',
-        theme: 'dark',
-      });
+      const notify = () =>
+        toast.success(register.message, {
+          position: 'bottom-right',
+          theme: 'dark'
+        })
       notify()
+      setFormData({
+        first_name: '',
+        last_name: '',
+        display_name: '',
+        email: ''
+      })
     }
   }
 

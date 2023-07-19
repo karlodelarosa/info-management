@@ -24,7 +24,7 @@ export default function Attendance() {
                       key == 4 ? 'bg-gray-200' : ''
                     }`}
                   >
-                    <h4 className="text-lg font-bold">Funday {data}</h4>
+                    <h4 className="text-lg font-bold">Funday {key + 1}</h4>
                     <p className="text-sm text-gray-500">May 29, 2023</p>
                   </li>
                 ))}

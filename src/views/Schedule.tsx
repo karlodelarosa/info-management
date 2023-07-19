@@ -56,8 +56,8 @@ export default function Schedule() {
                   <time className="mb-1 text-sm font-normal leading-none text-gray-400 ">
                     June 28 2022
                   </time>
-                  <h3 className="text-lg font-semibold text-gray-900 ">13th Anniversary</h3>
-                  <p className="mb-4 text-base font-normal text-gray-500 ">Regular service</p>
+                  <h3 className="text-lg font-semibold text-gray-900 ">Company Anniversary</h3>
+                  <p className="mb-4 text-base font-normal text-gray-500 ">Annual Event</p>
 
                   <div className="flex flex-row items-center justify-between">
                     <div className="flex flex-row gap-x-1">
