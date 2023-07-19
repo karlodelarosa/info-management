@@ -4,7 +4,6 @@ import DbConnection from '../db/DbConnection'
 import { IUserRepository } from '@/core/domain/repositories/IUserRepository'
 import { CreateUserForm } from '@/core/domain/types/CreateUserForm.types'
 import UserEntity from '@/core/domain/entity/User'
-import { Response } from '@/core/domain/types/Response.type'
 
 export default class UserRepository extends DbConnection implements IUserRepository {
   findById(id: string): Promise<User | null> {

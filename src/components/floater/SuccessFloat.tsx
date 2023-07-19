@@ -6,6 +6,7 @@ interface SuccessResponse {
 
 export default function SuccessFloat({ response }: SuccessResponse) {
   let showAlert = 'opacity-100'
+  console.info(response)
   setTimeout(() => {
     showAlert = 'opacity-0'
   }, 2000)
